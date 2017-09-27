@@ -1,0 +1,14 @@
+
+include/
+
+share/
+
+bin/
+
+lib/
+
+scraper/bbitems\.pyc
+
+scraper/bbscrape\.pyc
+
+pip-selfcheck\.json
