@@ -23,8 +23,9 @@ class BBSpider(scrapy.Spider):
             ##authors
             author = book.css('.book-author').extract_first()
             #author = author.strip(' by ')
-            author = author.replace('\n by \n', '')
+            #author = author.replace('\n by \n', '')
             author = remove_tags(author)
+            author = author[4:]
             author = author.encode('utf-8')
             # with open('/home/tom/Documents/Python/BookBlurbs/scraper/romance-blurbs.txt', 'a') as f:
             #     f.write(blurb)
