@@ -22,18 +22,22 @@ class BBSpider(scrapy.Spider):
             blurb = blurb.encode('utf-8')
             ##authors
             author = book.css('.book-author').extract_first()
-            #author = author.strip(' by ')
-            #author = author.replace('\n by \n', '')
             author = remove_tags(author)
             author = author[4:]
             author = author.encode('utf-8')
+            ##titles
+            title = book.css('.book-title a::text').extract_first()
+            title = remove_tags(title)
+            title = title.encode('utf-8')
             # with open('/home/tom/Documents/Python/BookBlurbs/scraper/romance-blurbs.txt', 'a') as f:
             #     f.write(blurb)
-            #     f.write(' ')
             #     f.write('\n')
-            with open('/home/tom/Documents/Python/BookBlurbs/scraper/romance-authors.txt', 'a') as f:
-                f.write(author)
-                f.write(' ')
+            # with open('/home/tom/Documents/Python/BookBlurbs/scraper/romance-authors.txt', 'a') as f:
+            #     f.write(author)
+            #     f.write(' ')
+            with open('/home/tom/Documents/Python/BookBlurbs/scraper/romance-titles.txt', 'a') as f:
+                f.write(title)
+                f.write('\n')
 
         NEXT_PAGE_SELECTOR = '.next ::attr(href)'
         next_page = response.css(NEXT_PAGE_SELECTOR).extract_first()
