@@ -12,3 +12,5 @@ scraper/bbitems\.pyc
 scraper/bbscrape\.pyc
 
 pip-selfcheck\.json
+
+generator/bbconfig\.py
