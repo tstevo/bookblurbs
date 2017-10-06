@@ -1,13 +1,13 @@
 import markovify
 from bbtweeter import main
 
-with open("/home/tom/Documents/Python/BookBlurbs/scraper/romance-titles.txt") as f:
+with open("../scraper/romance-titles.txt") as f:
 	romtitletext = f.read()
-with open("/home/tom/Documents/Python/BookBlurbs/scraper/science-titles.txt") as f:
+with open("../scraper/science-titles.txt") as f:
     scititletext = f.read()
-with open("/home/tom/Documents/Python/BookBlurbs/scraper/romance-blurbs.txt") as f:
+with open("../scraper/romance-blurbs.txt") as f:
 	romblurbtext = f.read()
-with open("/home/tom/Documents/Python/BookBlurbs/scraper/science-blurbs.txt") as f:
+with open("../scraper/science-blurbs.txt") as f:
     sciblurbtext = f.read()
 
 sci_model1 = markovify.NewlineText(scititletext)
