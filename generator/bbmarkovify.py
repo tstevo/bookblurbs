@@ -1,13 +1,16 @@
+import os
 import markovify
 from bbtweeter import main
 
-with open("../scraper/romance-titles.txt") as f:
+path = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
+path2 = os.path.join(path,"scraper")
+with open(os.path.join(path2,"romance-titles.txt")) as f:
 	romtitletext = f.read()
-with open("../scraper/science-titles.txt") as f:
+with open(os.path.join(path2,"science-titles.txt")) as f:
     scititletext = f.read()
-with open("../scraper/romance-blurbs.txt") as f:
+with open(os.path.join(path2,"romance-blurbs.txt")) as f:
 	romblurbtext = f.read()
-with open("../scraper/science-blurbs.txt") as f:
+with open(os.path.join(path2,"science-blurbs.txt")) as f:
     sciblurbtext = f.read()
 
 sci_model1 = markovify.NewlineText(scititletext)
